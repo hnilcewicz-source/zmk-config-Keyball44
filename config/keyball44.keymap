@@ -47,6 +47,13 @@
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        
+        tt: tap_toggle_layer {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <1>;
+            tapping-term-ms = <200>;
+            bindings = <&tog>, <&tog>;
+        };
     };
 
     keymap {
