@@ -149,7 +149,7 @@
             wait-ms = <0>;
             tap-ms  = <0>;
             bindings =
-                <&macro_tap &rgb_ug RGB_COLOR_HSB(195 100 100)>,
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(195, 100, 100)>,
                 <&macro_tap &rgb_ug RGB_UG_MEFS(4)>;   // 4 = sparkle
         };
 
@@ -160,7 +160,7 @@
             wait-ms = <0>;
             tap-ms  = <0>;
             bindings =
-                <&macro_tap &rgb_ug RGB_COLOR_HSB(195 100 100)>,
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(195, 100, 100)>,
                 <&macro_tap &rgb_ug RGB_UG_MEFS(0)>;   // 0 = solid
         };
 
