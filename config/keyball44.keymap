@@ -64,6 +64,28 @@
             tapping-term-ms = <200>;
             bindings = <&mo SYM>, <&tog SYM>;
         };
+        
+        // Drop-in replacement for &lt 2 <key>
+        // Usage in keymap: &lt_sym BACKSPACE
+        lt_sym: lt_sym {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <1>;           // 1 cell = the tap keycode only
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <150>;
+            bindings = <&mo_sym_rgb>, <&kp>;
+        };
+
+        // Drop-in replacement for any &lt 1 <key> or &mo 1 key
+        // Usage in keymap: &lt_num SOME_KEY
+        lt_num: lt_num {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <1>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <150>;
+            bindings = <&mo_num_rgb>, <&kp>;
+        };
     };
 
     keymap {
@@ -203,31 +225,6 @@
                 <&macro_pause_for_release>,
                 <&macro_release &mo NUM>,
                 <&macro_tap     &rgb_l0>;
-        };
-    };
-
-    behaviors {
-
-        // Drop-in replacement for &lt 2 <key>
-        // Usage in keymap: &lt_sym BACKSPACE
-        lt_sym: lt_sym {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;           // 1 cell = the tap keycode only
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            quick-tap-ms = <150>;
-            bindings = <&mo_sym_rgb>, <&kp>;
-        };
-
-        // Drop-in replacement for any &lt 1 <key> or &mo 1 key
-        // Usage in keymap: &lt_num SOME_KEY
-        lt_num: lt_num {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            quick-tap-ms = <150>;
-            bindings = <&mo_num_rgb>, <&kp>;
         };
     };
 };
